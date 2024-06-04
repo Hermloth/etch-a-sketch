@@ -1,0 +1,13 @@
+.controlsBox{
+    display: flex;
+    min-width: 120px;
+    justify-content: space-around;
+}
+
+.button{
+    display: flex;
+    min-width: 50px;
+    padding: 3px;
+    border-radius: 4px;
+    width: auto;
+}
