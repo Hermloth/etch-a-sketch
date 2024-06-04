@@ -19,9 +19,8 @@
 
 .gridCell{
     display:flex;
-    min-width: 16px;
-    min-height: 16px;
-    border: 2px solid black;
+    flex: auto;
+    border: 0.5px solid black;
 }
 
 .gridRow {
@@ -34,5 +33,15 @@
     display: flex;
     flex-direction: column;
     flex: auto;
+    min-height: 800px;
+    min-width: 800px;
+    max-width: 800px;
+    max-height: 800px;
+    justify-content: center;
+}
 
+.masterContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }

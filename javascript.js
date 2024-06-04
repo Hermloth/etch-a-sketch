@@ -2,6 +2,13 @@
 //Global Variables
 var canvasSize = 16;
 var cellItteration = 0;
+
+var redValue = 255;
+var greenValue = 255;
+var blueValue = 255;
+
+var cellOpacity = 0.1;
+
 const maxCanvasSize = 100;
 const changeCanvasButton = document.querySelector("#ChangeCanvas");
 const resetCanvasButton = document.querySelector("#Reset")
@@ -24,15 +31,22 @@ changeCanvasButton.addEventListener("click", function () {
 
 resetCanvasButton.addEventListener("click", ClearCanvas);
 
+function RGB(){return Math.floor(Math.random()*(255-0+1)+0)}
+
+function GetRGBValue(){
+    var value1 = RGB();
+    var value2 = RGB();
+    var value3 = RGB();
+    var RGBReturn = 'rgb(' + value1 + "," + value2 + "," + value3 + ')';
+    console.log(RGBReturn);
+    return RGBReturn;
+}
+
 function ThrowInputError(){
     ClearCanvas();
     var errorMessage = document.createElement("p");
     errorMessage.textContent = "Invalid Selection, please select an integer size less than 100 squares.";
     canvasArea.appendChild(errorMessage);
-}
-
-function mouseHover (){
- //TODO: Implement hover listener
 }
 
 function SetUpGridRow(rowIteration) {
@@ -53,7 +67,12 @@ function CreateGridCell(iteration){
         newGridCell.setAttribute("id", cellItteration)
         newGridCell.addEventListener("mouseover", function(event){
             console.log("mouseover detected");
-            this.style.backgroundColor = "red";
+            this.style.backgroundColor = GetRGBValue();
+            this.style.opacity = cellOpacity;
+            if (cellOpacity < 1) {
+                cellOpacity = cellOpacity + 0.1;
+            }
+            
         })
         gridRow.appendChild(newGridCell);
     }
