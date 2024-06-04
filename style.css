@@ -2,6 +2,7 @@
     display: flex;
     min-width: 120px;
     justify-content: space-around;
+    margin-bottom: 10px;
 }
 
 .button{
@@ -10,4 +11,24 @@
     padding: 3px;
     border-radius: 4px;
     width: auto;
+}
+
+.gridCell{
+    display:flex;
+    min-width: 16px;
+    min-height: 16px;
+    border: 2px solid black;
+}
+
+.gridRow {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+}
+
+.playArea{
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+
 }
